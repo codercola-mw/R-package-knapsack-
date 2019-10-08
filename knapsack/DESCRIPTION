@@ -1,9 +1,9 @@
 Package: knapsack
 Type: Package
-Title: What the package does (short line)
+Title: This is the knapsack package
 Version: 1.0
 Date: 2019-10-08
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Author: Weng Hang Wong, Bjorn Hansen, Mahbuba Haque
+Maintainer: Mecon to <wenwo535@student.liu.se>
+Description:This package is created to study the effects of algorithms
+License: GPL-3
