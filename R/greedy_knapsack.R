@@ -1,5 +1,7 @@
 
 greedy_knapsack <- function(x, W){
+  stopifnot(is.data.frame(x))
+  stopifnot((W > 0) == TRUE)
   
   dens <- x$v / x$w #define item density, in our case (item value) / (item weight) 
   index <- 1:length(x$v)
