@@ -1,4 +1,4 @@
 library(testthat)
-library(knapsack)
+library(lab6)
 
-test_check("knapsack")
+test_check("lab6")
