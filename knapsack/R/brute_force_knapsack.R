@@ -1,14 +1,16 @@
-set.seed(42)
-n <- 20000
-knapsack_objects <-
-  data.frame(
-    w=sample(1:4000, size = n, replace = TRUE),
-    v=runif(n = n, 0, 10000)
-  )
+#' Using brute force search for the knapsack problem
+#'
+#' @name brute_force_knapsack
+#'
+#' @param x Data frame with two variables v and w
+#' @param W knapsack size
+#' @return maximum knapsack value and which elements 
+#' @export
+#' @importFrom utils combn
 
 
-brute_force_knapsack <- function(x, w){
-  stopifnot(x > 0, w > 0)
+brute_force_knapsack <- function(x, W){
+  stopifnot(x > 0, W > 0)
   
   #start row counter so it starts in the first value of x, and start empty lists.
   i=2 
@@ -24,7 +26,7 @@ brute_force_knapsack <- function(x, w){
     v <- as.data.frame(combn(x[,2], i)) #make all combinations of the values.
     sum_w <- colSums(w1)
     sum_v <- colSums(v)
-    weight_list <- which(sum_w <= w) #choose the sum which is largest from all weight combinations.
+    weight_list <- which(sum_w <= W) #choose the sum which is largest from all weight combinations.
     
     #find item with largest value for every entire weight_list.
     if(length(weight_list) != 0){ 
