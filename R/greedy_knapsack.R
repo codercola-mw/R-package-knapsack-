@@ -1,3 +1,11 @@
+#' Using the greedy approach for the knapsack problem
+#'
+#' @name greedy_knapsack
+#'
+#' @param x Data frame with two variables v and w
+#' @param W knapsack size
+#' @return maximum knapsack value and which elements 
+#' @export
 
 greedy_knapsack <- function(x, W){
   stopifnot(is.data.frame(x))
