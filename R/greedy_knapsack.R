@@ -17,7 +17,7 @@ greedy_knapsack <- function(x, W){
     weight <- weight + x$w[i] #add weight for every ith object in x
     if(weight < W){
       value <- value + x$v[i] #add value for every ith object in x
-      elements <- c(elements, index[i])
+      elements <- c(elements, as.numeric(rownames(x)[i]))
     }
   i=i+1
   if(i <= length(x$v)){stop} #stop while loop when all objects have been iterated
@@ -25,3 +25,4 @@ greedy_knapsack <- function(x, W){
   return(list(value = round(value), elements = elements))
   
 }
+
