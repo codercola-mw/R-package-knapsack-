@@ -9,5 +9,9 @@ Description: This package is created to study the effects of algorithms.
 License: GPL-3
 Encoding: UTF-8
 RoxygenNote: 6.1.1
-Suggests: testthat
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
 Imports: utils
+VignetteBuilder: knitr
