@@ -21,6 +21,7 @@ greedy_knapsack <- function(x, W){
     }
   i=i+1
   if(i <= length(x$v)){stop} #stop while loop when all objects have been iterated
+  
 }
   return(list(value = round(value), elements = elements))
   
