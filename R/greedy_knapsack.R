@@ -1,3 +1,11 @@
+#' Using the greedy approach for the knapsack problem
+#'
+#' @name greedy_knapsack
+#'
+#' @param x Data frame with two variables v and w
+#' @param W knapsack size
+#' @return maximum knapsack value and which elements 
+#' @export
 
 greedy_knapsack <- function(x, W){
   stopifnot(is.data.frame(x))
@@ -17,7 +25,7 @@ greedy_knapsack <- function(x, W){
     weight <- weight + x$w[i] #add weight for every ith object in x
     if(weight < W){
       value <- value + x$v[i] #add value for every ith object in x
-      elements <- c(elements, index[i])
+      elements <- c(elements, as.numeric(rownames(x)[i]))
     }
   i=i+1
   if(i <= length(x$v)){stop} #stop while loop when all objects have been iterated
@@ -26,3 +34,4 @@ greedy_knapsack <- function(x, W){
   return(list(value = round(value), elements = elements))
   
 }
+
