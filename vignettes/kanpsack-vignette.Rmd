@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(lab6)
+library(microbenchmark)
 ```
 
 
@@ -36,16 +37,19 @@ knapsack_objects <- data.frame(
 
 ```{r, include = TRUE}
 brute_force_knapsack(x = knapsack_objects[1:8,], W = 3500)
+microbenchmark(brute_force_knapsack(x = knapsack_objects[1:8,], W = 3500))
 ```
 
 
 # greedy_knapsack
 ```{r, include = TRUE}
 greedy_knapsack(x = knapsack_objects[1:8,], W = 3500)
+microbenchmark(greedy_knapsack(x = knapsack_objects[1:8,], W = 3500))
 ```
 
 
 # knapsack_dynamic
 ```{r, include = TRUE}
 knapsack_dynamic(x = knapsack_objects[1:8,], W = 3500)
+microbenchmark(knapsack_dynamic(x = knapsack_objects[1:8,], W = 3500))
 ```
