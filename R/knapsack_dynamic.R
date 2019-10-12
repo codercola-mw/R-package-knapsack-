@@ -10,15 +10,13 @@ knapsack_dynamic <- function(x, W){
   stopifnot(is.data.frame(x))
   stopifnot((W > 0) == TRUE)
   stopifnot(colnames(x) == c("w","v"))
-  
-  
-  n <- nrow(x)
-  m <- matrix(ncol = W+1, nrow=n+1)
-  m[1,] <- rep(0, W+1)
+ 
   w<- x$w
   v <- x$v
-  
-  for(i in 1:n){
+  m <- matrix(ncol = W+1, nrow=nrow(x)+1)
+  m[1,] <- rep(0, W+1)
+
+  for(i in 1:nrow(x)){
     for(j in 0:W){
       if (w[i] > j){
         m[i+1, j+1] <- m[i, j+1]
@@ -27,10 +25,10 @@ knapsack_dynamic <- function(x, W){
     }
   }
   
-  #looking from the back
+  #looking from the back elements
   j <- j+1
   i <- which.max(m[,j])
-  elements<-length(n)
+  elements<-length(nrow(x))
   k <- 1
   elements[k] <- i-1
   
@@ -41,10 +39,12 @@ knapsack_dynamic <- function(x, W){
     elements[k]<-i-1
   }
   
-  value<-round(m[n+1,W+1])
+  value<-round(m[nrow(x)+1,W+1])
   elements<-sort(elements[which(elements>0)])
   
   return(list(value=value,elements=elements))
 }
 
+
+knapsack_dynamic(x=knapsack_objects[1:80,], W=5000)
 
