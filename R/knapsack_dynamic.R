@@ -46,5 +46,5 @@ knapsack_dynamic <- function(x, W){
 }
 
 
-knapsack_dynamic(x=knapsack_objects[1:80,], W=5000)
+# knapsack_dynamic(x=knapsack_objects[1:80,], W=5000)
 
