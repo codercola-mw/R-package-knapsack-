@@ -1,6 +1,6 @@
 
 
-parallel_brute_force_knapsack <- function(x, W){
+parallel_brute_force_knapsack <- function(x, W, parallel = FALSE){
   c <- parallel::detectCores()
   
   n <- length(x$W)

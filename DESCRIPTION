@@ -14,5 +14,5 @@ Suggests:
     knitr,
     rmarkdown,
     microbenchmark
-Imports: utils
+Imports: utils, Rcpp
 VignetteBuilder: knitr

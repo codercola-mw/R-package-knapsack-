@@ -4,12 +4,14 @@
 \alias{knapsack_dynamic}
 \title{Using the dynamic approach for the knapsack problem}
 \usage{
-knapsack_dynamic(x, W)
+knapsack_dynamic(x, W, fast = FALSE)
 }
 \arguments{
 \item{x}{Data frame with two variables v and w}
 
 \item{W}{knapsack size}
+
+\item{fast}{to choose to use Rcpp or not}
 }
 \value{
 maximum knapsack value and which elements
