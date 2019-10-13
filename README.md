@@ -2,28 +2,6 @@
 # lab6
  The knapsack package
 
----
-title: "knapsack-vignette"
-output: rmarkdown::html_vignette
-vignette: >
-  %\VignetteIndexEntry{kanpsack-vignette}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
----
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>"
-)
-```
-
-```{r setup}
-library(lab6)
-library(microbenchmark)
-```
-
-
 This package we will create 3 algorithms to the knapsack problem with different computional complexity and how to speedup R code. The goal is to find the knapsack with the largest value of the elements added to the knapsack.
 
 # Set up
