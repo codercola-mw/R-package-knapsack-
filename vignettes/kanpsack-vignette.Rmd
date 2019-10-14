@@ -25,7 +25,7 @@ This package we will create 3 algorithms to the knapsack problem with different 
 # Set up
 ```{r, include = TRUE}
 set.seed(42)
-n <- 2000
+n <- 1000000
 knapsack_objects <- data.frame(
   w=sample(1:4000, size = n, replace = TRUE),
   v=runif(n = n, 0, 10000)
@@ -35,22 +35,22 @@ knapsack_objects <- data.frame(
 # brute_force_knapsack
 
 ```{r, include = TRUE}
-brute_force_knapsack(x = knapsack_objects[1:8,], W = 3500)
-microbenchmark(brute_force_knapsack(x = knapsack_objects[1:8,], W = 3500))
+brute_force_knapsack(x = knapsack_objects[1:16,], W = 3500)
+microbenchmark(brute_force_knapsack(x = knapsack_objects[1:16,], W = 3500))
 ```
 
 
 # greedy_knapsack
 ```{r, include = TRUE}
-greedy_knapsack(x = knapsack_objects[1:8,], W = 3500)
-microbenchmark(greedy_knapsack(x = knapsack_objects[1:8,], W = 3500))
+greedy_knapsack(x = knapsack_objects[1:1000000,], W = 3500)
+microbenchmark(greedy_knapsack(x = knapsack_objects[1:1000000,], W = 3500))
 ```
 
 
 # knapsack_dynamic
 ```{r, include = TRUE}
-knapsack_dynamic(x = knapsack_objects[1:8,], W = 3500)
-microbenchmark(knapsack_dynamic(x = knapsack_objects[1:8,], W = 3500, fast=FALSE))
+knapsack_dynamic(x = knapsack_objects[1:500,], W = 3500)
+microbenchmark(knapsack_dynamic(x = knapsack_objects[1:500,], W = 3500, fast=FALSE))
 ```
 
 
